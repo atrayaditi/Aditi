@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Aditi Atray</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+
+/* body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, 
+    #ffecd2 0%, 
+    #fcb69f 20%, 
+    #ff9a9e 40%, 
+    #fecfef 60%, 
+    #fecfef 80%, 
+    #d0e7ff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+} */
+
+/* Floating pastel shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+.shape1 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ffb3ba, #ffdfba);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, #bae1ff, #baffc9);
+  top: 70%;
+  right: 15%;
+  animation-delay: -2s;
+}
+
+.shape3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #ffffba, #ffb3ba);
+  top: 30%;
+  right: 25%;
+  animation-delay: -4s;
+}
+
+.shape4 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #d4b5ff, #ffb3f0);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: -1s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-20px) translateX(10px) rotate(120deg); 
+  }
+  66% { 
+    transform: translateY(10px) translateX(-10px) rotate(240deg); 
+  }
+}
+
+.about-container {
+  width: 100%;
+
+}
+
+.dark-theme.about-card::before{
+    background: linear-gradient(90deg, #4c4141, #342f32, #ffecd2, #fcb69f);
+}
+.about-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 60px;
+  /* box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2); */
+  /* border: 2px solid rgba(255, 255, 255, 0.3); */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9a9e, #fecfef, #ffecd2, #fcb69f);
+  border-radius: 32px 32px 0 0;
+}
+
+.profile-section {
+  margin-bottom: 40px;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: white;
+  margin: 0 auto 24px;
+  box-shadow: 0 15px 40px rgba(255, 154, 158, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.profile-avatar::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff9a9e, #fecfef, #ffecd2, #fcb69f);
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #2d3748, #4a5568, #667788);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  color: #718096;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.about-content {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.highlight-name {
+  font-weight: 700;
+  color: #2d3748;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.3em;
+}
+
+
+.passion-highlight {
+  background: linear-gradient(135deg, rgba(255, 154, 158, 0.2), rgba(254, 207, 239, 0.2));
+  padding: 32px;
+  border-radius: 24px;
+  margin: 40px 0;
+  border: 1px solid rgba(255, 154, 158, 0.2);
+  position: relative;
+}
+
+.passion-highlight::before {
+  content: '💡';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 40px 30px;
+    margin: 20px;
+    border-radius: 24px;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .about-content {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .about-card {
+    padding: 30px 20px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}
+</style>
+
+<body>
+
+  <div class="floating-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+  </div>
+
+  <div class="about-container">
+    <div class="about-card">
+      <div class="profile-section">
+        <div class="profile-avatar">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+        <h1 class="about-title">About Me</h1>
+        <p class="about-subtitle">ML Engineer & AI Enthusiast</p>
+      </div>
+
+      <div class="about-content">
+        <p>
+          I'm <span class="highlight-name">Aditi Atray</span>, an enthusiastic ML engineer pursuing AIML.
+        </p>
+        
+        <div class="passion-highlight">
+          <p>
+            I love crafting intelligent models and blending AI with real-world problems. 
+            My passion lies in building beautiful, intelligent web experiences — where design meets data.
+          </p>
+        </div>
+        
+        <p>
+          From Django to deep learning, I'm all about clean code and meaningful impact. 
+          I believe in creating technology that not only works beautifully but also makes a difference in people's lives.
+        </p>
+      </div>
+
+    
+    </div>
+  </div>
+
+  <script>
+    // Add some interactive magic
+    document.addEventListener('mousemove', function(e) {
+      const shapes = document.querySelectorAll('.shape');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 0.5;
+        const xOffset = (x - 0.5) * 20 * speed;
+        const yOffset = (y - 0.5) * 20 * speed;
+        
+        shape.style.transform += ` translate(${xOffset}px, ${yOffset}px)`;
+      });
+    });
+
+    // Add scroll-triggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.skill-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'all 0.6s ease';
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>

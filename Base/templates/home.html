@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Aditi Atray</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <style>
+    .contact {
+      margin-top: 80px;
+    }
+    .bitmoji {
+      z-index: 100;
+    }
+    .Theme-icon {
+      cursor: pointer;
+    }
+    .active {
+      text-decoration: underline;
+      text-decoration-color: #007bff;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+      color: #007bff; /* Optional: Change text color for active link */
+    }
+  </style>
+  <body>
+    <nav>
+      <h2>Portfolio</h2>
+      <ul>
+        <li>
+          <a href="#homeSection" class=" link active" id="home" onclick="is_active('home')">Home</a>
+        </li>
+        <li>
+          <a href="#aboutSection" class="link" id="about" onclick="is_active('about')">About</a>
+        </li>
+        <li>
+          <a href="#skillsSection" class="link " id="skills"  onclick="is_active('skills')"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a href="#projectsSection" class="link" id="projects" onclick="is_active('projects')"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#contactSection" class="link " id="contact"  onclick="is_active('contact')"
+            >Contact</a
+          >
+        </li>
+        <li onclick="toggleTheme()" class="Theme-icon">🎨</li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="homeSection">
+      <div class="hero-text">
+        <h1>Hi, I'm <strong style="color: #c94f7c">ADITI ATRAY</strong></h1>
+        <h2><span class="typing">Machine Learning Engineer</span></h2>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/aditiatray" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/aditiatray" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+        <div class="resume-download">
+          <a href="{% static 'files/resume.pdf' %}" target="_blank">
+            <i class="fas fa-computer-mouse"></i> View Resume
+          </a>
+        </div>
+      </div>
+      <img
+        src="{% static 'images/mypic.png' %}"
+        alt="Bitmoji"
+        class="bitmoji"
+      />
+    </section>
+
+    <div id="aboutSection">{% include "about.html" %}</div>
+    <div id="skillsSection">{% include "skills.html" %}</div>
+    <div id="projectsSection">{% include "projects.html" %}</div>
+    <div class="contact" id="contactSection">{% include "contact.html" %}</div>
+
+    <!-- ✅ Theme Switcher Script -->
+    <script>
+      const selector = document.getElementById("theme-selector");
+
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("pastel");
+        body.classList.toggle("aqua");
+        localStorage.setItem("selectedTheme", selectedTheme);
+      }
+
+      selector.addEventListener("change", function () {
+        const selectedTheme = this.value;
+        document.body.classList.remove("pastel", "aqua");
+        document.body.classList.add(selectedTheme);
+        localStorage.setItem("selectedTheme", selectedTheme);
+      });
+
+      window.addEventListener("load", () => {
+        const savedTheme = localStorage.getItem("selectedTheme") || "pastel";
+        document.body.classList.add(savedTheme);
+        selector.value = savedTheme;
+      });
+
+      function is_active(link){
+      const all_links = ['home', 'about', 'skills', "projects", 'contact']
+
+       const active_link =  document.getElementById(link)
+       active_link.classList.add('active')
+       all_links.map((item)=>{
+          if (item != link){
+            document.getElementById(item).classList.remove('active')
+          }
+       })
+      }
+
+      window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 60) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+     </script>
+  </body>
+</html>

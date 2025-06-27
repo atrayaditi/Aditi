@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Aditi Atray</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+.contact-container {
+  margin: 200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: calc(100vh - 30px);
+}
+
+.contact-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+     background: linear-gradient(45deg, #dc461e, #1b1816);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  max-width: 400px;
+  color: #1b1816;
+}
+
+.contact-illustration {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 32px;
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.form-header p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group label {
+  position: absolute;
+  left: 24px;
+  top: 10px;
+  color: #a0aec0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -12px;
+  left: 16px;
+  background: white;
+  padding: 0 8px;
+  font-size: 0.875rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  font-family: 'Inter', sans-serif;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.contact-info {
+  margin-top: 32px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.contact-info h3 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-item i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.info-item a {
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+  color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 20px;
+  }
+  
+  .contact-content {
+    padding: 32px 24px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .contact-illustration {
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+  }
+  
+  .form-header h2 {
+    font-size: 2rem;
+  }
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-elements::before,
+.floating-elements::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float-random 6s ease-in-out infinite;
+}
+
+.floating-elements::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: -2s;
+}
+
+.floating-elements::after {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: -4s;
+}
+
+@keyframes float-random {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(-10px); }
+  75% { transform: translateY(-30px) translateX(5px); }
+}
+</style>
+
+<body>
+  <div class="floating-elements"></div>
+  
+  <div class="contact-container">
+    <div class="contact-hero">
+      <div class="hero-content">
+        <div class="contact-illustration">
+          <i class="fas fa-paper-plane"></i>
+        </div>
+        <h1>Let's Connect</h1>
+        <p>Ready to start a conversation? I'd love to hear from you and discuss exciting opportunities!</p>
+      </div>
+    </div>
+
+    <div class="contact-content">
+      <div class="form-header">
+        <h2>Get In Touch</h2>
+        <p>Send me a message and I'll get back to you as soon as possible</p>
+      </div>
+
+      <form class="contact-form" method="POST">
+        <!-- Note: Django CSRF token would go here -->
+        <!-- {% csrf_token %} -->
+        
+        <div class="form-group">
+          <input type="text" name="name" id="name" placeholder=" " required>
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" id="email" placeholder=" " required>
+          <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" name="number" id="number" placeholder=" " required>
+          <label for="number">Phone Number</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="content" id="content" placeholder=" " required></textarea>
+          <label for="content">Your Message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+          Send Message
+        </button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Other Ways to Reach Me</h3>
+        
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:atrayaditi015@gmail.com">atrayaditi015@gmail.com</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/aditiatray" target="_blank">linkedin.com/in/aditiatray</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add some interactive feedback
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      const btn = document.querySelector('.submit-btn');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Sending...';
+      btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+      
+      // Note: In real implementation, you'd handle the actual form submission here
+      // This is just for visual feedback demonstration
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Message Sent!';
+      }, 1500);
+    });
+
+    // Add floating animation to the illustration
+    document.addEventListener('mousemove', function(e) {
+      const illustration = document.querySelector('.contact-illustration');
+      const x = (e.clientX / window.innerWidth) * 10;
+      const y = (e.clientY / window.innerHeight) * 10;
+      illustration.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  </script>
+</body>
+</html>

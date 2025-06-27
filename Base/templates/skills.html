@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Aditi Atray</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      color: #333;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ffffffdd;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+    }
+    nav h2 {
+      color: #00838f;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #00838f;
+    }
+    .skills-section {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 10% 60px;
+      text-align: center;
+    }
+    .skills-section h1 {
+      font-size: 3.5rem;
+      color: #00838f;
+      margin-bottom: 1rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 900px;
+      width: 100%;
+    }
+    .skill-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .skill-card i {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      color: #00838f;
+    }
+    .skill-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+  
+    @keyframes pulseBounce {
+      0%, 100% {
+        transform: scale(1) translateY(0);
+      }
+      50% {
+        transform: scale(1.12) translateY(-10px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills-section h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <section class="skills-section">
+    <h1>My Skills</h1>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-brain"></i>
+        <h3>Machine Learning</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-network-wired"></i>
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Django</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <h3>HTML/CSS</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+      </div>
+    </div>
+    
+  
+  </section>
+</body>
+</html>

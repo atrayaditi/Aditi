@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Aditi Atray</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+ 
+</head>
+<style>
+  .projects-section h1{
+     font-size: 3.5rem;
+      color: #00838f;
+      margin-bottom: 1rem;
+  }
+</style>
+<body>
+ 
+
+  <section class="projects-section">
+    <h1>My Projects</h1>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="{% static 'images/project1.jpg' %}" alt="drug-discover-system">
+        <div class="project-content">
+          <h3>Drug-Target Interaction Predictor</h3>
+          <p>A machine learning model trained on KIBA scores to predict interactions between drugs and target proteins.</p>
+          <a href="https://github.com/atrayaditi/drug-discover-system" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="project-card">
+  <img src="{% static 'images/project2.jpg' %}" alt="Movie Recommendation System">
+  <div class="project-content">
+    <h3>Movie Recommendation System</h3>
+    <p>A machine learning-based system that recommends movies based on user preferences and similarity scores.</p>
+    <a href="https://github.com/aditiatray/movie-recommender" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</div>
+
+
+  <div class="project-card">
+  <img src="{% static 'images/project3.jpg' %}" alt="Portfolio Website">
+  <div class="project-content">
+    <h3>Advanced Portfolio Website</h3>
+    <p>A beautifully crafted multi-page portfolio built using Django with animations, scroll effects, and full responsiveness.</p>
+    <a href="https://github.com/aditiatray/portfolio-website" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</div>
+
+
+</body>
+</html>
